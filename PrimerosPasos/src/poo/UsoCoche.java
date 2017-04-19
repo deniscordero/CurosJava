@@ -4,7 +4,7 @@ import javax.swing.*;
 public class UsoCoche {
 	
 	public static void main(String[] args){
-//		Coche Renault = new Coche(); // INSTANCIAR UNA CLASE. EJEMPLAR DE CLASE   .
+//		Coche Renault = new Coche(); // INSTANCIAR UNA CLASE. EJEMPLAR DE CLASE.
 	
 //		System.out.println("Este coche tiene " + Renault.getLargo() +  " ruedas");
 		
