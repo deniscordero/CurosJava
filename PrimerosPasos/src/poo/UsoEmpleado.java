@@ -19,18 +19,22 @@ class Empleado{
 	
 	
 	public String getNombre(){//GETTER
+		
 		return nombre;
 	}
 	
 	public double getSueldo(){//GETTER
+		
 		return sueldo;
 	}
 	
 	public Date getFechaContrato(){//GETTER
+		
 		return altaContrato;
 	}
 	
 	public void subeSueldo(double porcentaje){//SETTER
+		
 		double aumento = sueldo * porcentaje/100;
 		sueldo += aumento;
 	}
