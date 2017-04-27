@@ -4,22 +4,32 @@ public class Pruebas {
 	public static void main(String [] args){
 		Empleados trabajador1 = new Empleados("Denis");
 		Empleados trabajdor2 = new Empleados("Monserrat");
+		Empleados trabajdor3 = new Empleados("Wilfredo");
+		Empleados trabajdor4 = new Empleados("Yaneth");
 		trabajador1.cambiaSeccion("RRHH");
-		trabajador1.cambiaNombre("Wilfredo");
+		
 		
 		System.out.println(trabajador1.devuelveDatos());
 		System.out.println(trabajdor2.devuelveDatos());
+		System.out.println(trabajdor3.devuelveDatos());
+		System.out.println(trabajdor4.devuelveDatos());
 	}
 }
 
 class Empleados{
 	
-	private String nombre;
+	private final String nombre;
 	private String seccion;
+	private int id;
+	private static int idSiguiente = 1;
 	
-	public Empleados(String nom){
-		nombre = nom;
+	public Empleados(String nombre){
+		this.nombre = nombre;
 		seccion = "Administración";
+		id = idSiguiente;
+		idSiguiente++;
+		
+		
 	}
 	
 	public void cambiaSeccion(String seccion){//SETTER
@@ -28,10 +38,8 @@ class Empleados{
 	
 	public String devuelveDatos(){
 		
-		return "El nombre es: " + nombre + " y la seccion es " + seccion;
+		return "El nombre es: " + nombre + " y la seccion es " + seccion + " y el Id = " + id;
 	}
 	
-	public void cambiaNombre(String nombre){
-		this.nombre = nombre;
-	}
+
 }
