@@ -3,16 +3,17 @@ package poo;
 public class Pruebas {
 	public static void main(String [] args){
 		Empleados trabajador1 = new Empleados("Denis");
-		Empleados trabajdor2 = new Empleados("Monserrat");
-		Empleados trabajdor3 = new Empleados("Wilfredo");
-		Empleados trabajdor4 = new Empleados("Yaneth");
+		Empleados trabajador2 = new Empleados("Monserrat");
+		Empleados trabajador3 = new Empleados("Wilfredo");
+		Empleados trabajador4 = new Empleados("Yaneth");
 		trabajador1.cambiaSeccion("RRHH");
 		
 		
-		System.out.println(trabajador1.devuelveDatos());
-		System.out.println(trabajdor2.devuelveDatos());
-		System.out.println(trabajdor3.devuelveDatos());
-		System.out.println(trabajdor4.devuelveDatos());
+		System.out.println(trabajador1.devuelveDatos() + "\n" + trabajador2.devuelveDatos()+
+				"\n"+ trabajador3.devuelveDatos() + "\n" + trabajador4.devuelveDatos());
+		
+		System.out.println(Empleados.dameIdSiguiente());
+
 	}
 }
 
@@ -28,8 +29,11 @@ class Empleados{
 		seccion = "Administración";
 		id = idSiguiente;
 		idSiguiente++;
+	}
+	
+	public static String dameIdSiguiente(){
 		
-		
+		return "El IdSiguiente es: " +idSiguiente;
 	}
 	
 	public void cambiaSeccion(String seccion){//SETTER
