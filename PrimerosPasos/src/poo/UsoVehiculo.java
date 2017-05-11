@@ -1,7 +1,7 @@
 package poo;
 import javax.swing.*;
 
-public class UsoCoche {
+public class UsoVehiculo {
 	
 	public static void main(String[] args){
 //		Coche Renault = new Coche(); // INSTANCIAR UNA CLASE. EJEMPLAR DE CLASE.
@@ -9,7 +9,8 @@ public class UsoCoche {
 //		System.out.println("Este coche tiene " + Renault.getLargo() +  " ruedas");
 		
 //		System.out.println(Renault.dimeLargo());
-		
+	/*
+	 
 	Coche miCoche = new Coche();
 	
 	miCoche.estableceColor(JOptionPane.showInputDialog("Introduce color"));
@@ -24,7 +25,19 @@ public class UsoCoche {
 	
 	System.out.println(miCoche.dimePesoCoche());
 	
-	System.out.println("El precio final del coche es; " + miCoche.precioCoche());
+	System.out.println("El precio final del coche es; " + miCoche.precioCoche()); 
+	*/
+		
+		Coche miCoche1 = new Coche();
+		miCoche1.estableceColor("Rojo");
+		
+		Furgoneta miFurgoneta1 = new Furgoneta(7, 580);
+		miFurgoneta1.estableceColor("azul");
+		miFurgoneta1.configuraAsientos("Si");
+		miFurgoneta1.configuraClimatizador("Si");
+		
+		System.out.println(miCoche1.dimeDatosGenerales() + " " + miCoche1.dimeColor());
+		System.out.println(miFurgoneta1.dimeDatosGenerales()+ " " + miFurgoneta1.dimeDatosFurgoneta() + " " + miFurgoneta1.dimeColor());
 		
 	}
 }

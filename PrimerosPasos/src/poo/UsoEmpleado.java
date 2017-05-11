@@ -23,12 +23,18 @@ public class UsoEmpleado {
 				+ empleado3.getSueldo() + " Fecha de Alta: " + empleado3.getFechaContrato());
 		*/
 		
-		Empleado[] misEmpleados = new Empleado[4];
+		Jefatura jefe_RRHH = new Jefatura("Denis", 55000, 2006, 9, 25);
+		jefe_RRHH.estableceIncentivo(2570);
 		
-		misEmpleados[0] = new Empleado("Denis Cordero", 85000, 1990, 12, 17);
+		Empleado[] misEmpleados = new Empleado[6];
+		
+		misEmpleados[0] = new Empleado("Wily Cordero", 85000, 1990, 12, 17);
 		misEmpleados[1] = new Empleado("Monserrat Mejia", 95000, 1995, 06, 02);
 		misEmpleados[2] = new Empleado("Maria Martín", 105000, 2002, 03, 15);
 		misEmpleados[3] = new Empleado("Jessikka");
+		misEmpleados[4] = jefe_RRHH; //Polimorfismo en acción. Principio de sustitución
+		misEmpleados[5] = new Jefatura("María", 95000, 1999, 4, 26);
+		
 		
 		/*for(int i=0; i<misEmpleados.length; i++){
 			misEmpleados[i].subeSueldo(5);
@@ -57,11 +63,13 @@ public class UsoEmpleado {
 
 class Empleado{
 	
-	public Empleado(String nom, int sue, int agno, int mes, int dia){
+	public Empleado(String nom, double sue, int agno, int mes, int dia){
 		nombre = nom;
 		sueldo = sue;
 		GregorianCalendar calendario = new GregorianCalendar(agno, mes-1, dia);
 		altaContrato = calendario.getTime();
+		++IdSiguiente;
+		Id = IdSiguiente;
 	}
 	
 	public Empleado(String nombre){
@@ -72,7 +80,7 @@ class Empleado{
 	
 	public String getNombre(){//GETTER
 		
-		return nombre;
+		return nombre + " Id: " + Id;
 	}
 	
 	public double getSueldo(){//GETTER
@@ -95,5 +103,25 @@ class Empleado{
 	private String nombre;
 	private double sueldo;
 	private Date altaContrato;
+	private static int IdSiguiente;
+	private int Id;
+}
+
+class Jefatura extends Empleado{
+	public Jefatura(String nom, double sue, int agno, int mes, int dia){
+		super(nom, sue, agno, mes, dia);
+	}
+	
+	public void estableceIncentivo(double incentivo){
+		this.incentivo = incentivo;
+	}
+	
+	public double getSueldo(){
+		double suedoJefe = super.getSueldo();
+		return suedoJefe + incentivo;
+	}
+	
+	private double incentivo;
+	
 	
 }
