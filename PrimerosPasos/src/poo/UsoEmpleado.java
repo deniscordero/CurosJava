@@ -35,7 +35,8 @@ public class UsoEmpleado {
 		misEmpleados[4] = jefe_RRHH; //Polimorfismo en acción. Principio de sustitución
 		misEmpleados[5] = new Jefatura("María", 95000, 1999, 4, 26);
 		
-		
+		Jefatura jefaFinanzas = (Jefatura) misEmpleados[5];
+		jefaFinanzas.estableceIncentivo(55000);
 		/*for(int i=0; i<misEmpleados.length; i++){
 			misEmpleados[i].subeSueldo(5);
 		}*/
@@ -120,8 +121,10 @@ class Jefatura extends Empleado{
 		double suedoJefe = super.getSueldo();
 		return suedoJefe + incentivo;
 	}
-	
+	  
 	private double incentivo;
 	
 	
 }
+
+
